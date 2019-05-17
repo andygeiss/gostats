@@ -1,4 +1,4 @@
-package complexity
+package nodes
 
 import (
 	"go/ast"
@@ -15,7 +15,7 @@ func FromSource(path string) (int, error) {
 		return 0, err
 	}
 
-	var state complexityVisitor
+	var state nodesVisitor
 	for _, decl := range f.Decls {
 		switch fn := decl.(type) {
 		case *ast.FuncDecl:
@@ -23,17 +23,14 @@ func FromSource(path string) (int, error) {
 		}
 	}
 
-	return state.Complexity, nil
+	return state.Nodes, nil
 }
 
-type complexityVisitor struct {
-	Complexity int
+type nodesVisitor struct {
+	Nodes int
 }
 
-func (c *complexityVisitor) Visit(node ast.Node) ast.Visitor {
-	switch node.(type) {
-	case *ast.FuncDecl, *ast.IfStmt, *ast.SwitchStmt:
-		c.Complexity++
-	}
+func (c *nodesVisitor) Visit(node ast.Node) ast.Visitor {
+	c.Nodes++
 	return c
 }

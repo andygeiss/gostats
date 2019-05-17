@@ -2,11 +2,12 @@ package stats
 
 // Service ...
 type Service interface {
-	Measure() (slice []Statistics, err error)
+	Measure() (result []Statistics, err error)
 }
 
 // Statistics ...
 type Statistics struct {
-	Ident string
+	Ident      string
 	Complexity int
+	Nodes      int
 }

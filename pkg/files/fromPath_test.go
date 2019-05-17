@@ -3,7 +3,7 @@ package files_test
 import (
 	"github.com/andygeiss/assert"
 	"github.com/andygeiss/assert/is"
-	"github.com/andygeiss/goinfo/pkg/files"
+	"github.com/andygeiss/gostats/pkg/files"
 	"testing"
 )
 
