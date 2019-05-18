@@ -1,0 +1,7 @@
+# github.com/andygeiss/assert v0.0.6
+github.com/andygeiss/assert
+github.com/andygeiss/assert/is
+# github.com/mattn/go-runewidth v0.0.4
+github.com/mattn/go-runewidth
+# github.com/olekukonko/tablewriter v0.0.1
+github.com/olekukonko/tablewriter
