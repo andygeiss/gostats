@@ -12,8 +12,8 @@ func init() {
 
 var complexityCmd = &cobra.Command{
 	Use:   "complexity",
-	Short: "Print the complexity of a given Golang source directory",
-	Long:  "Print the complexity of a given Golang source directory",
+	Short: "Measures the number of linearly independent paths rough a source code",
+	Long:  "Measures the number of linearly independent paths rough a source code",
 	Run: func(cmd *cobra.Command, args []string) {
 		printHelpIfEmptyArgs(args)
 		printComplexityByResult(getResultByArg0Path(args))
@@ -21,9 +21,9 @@ var complexityCmd = &cobra.Command{
 }
 
 func printComplexityByResult(result []stats.Statistics) {
-	c := 0
+	num := 0
 	for _, stat := range result {
-		c += stat.Complexity
+		num += stat.Complexity
 	}
-	fmt.Printf("%d\n", c)
+	fmt.Printf("%d\n", num)
 }
