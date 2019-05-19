@@ -31,10 +31,10 @@ func printTableWithResult(result []stats.Statistics) {
 		if stat.Complexity == 0 {
 			stat.Complexity++
 		}
-		table.Append([]string{stat.Ident, strconv.Itoa(stat.Nodes), strconv.Itoa(stat.Complexity), strconv.Itoa(stat.Nodes/stat.Complexity)})
+		table.Append([]string{stat.Ident, strconv.Itoa(stat.Nodes), strconv.Itoa(stat.Complexity), strconv.Itoa(stat.Nodes / stat.Complexity)})
 		c += stat.Complexity
 		n += stat.Nodes
 	}
-	table.SetFooter([]string{"Total", strconv.Itoa(n), strconv.Itoa(c), strconv.Itoa(n/c)})
+	table.SetFooter([]string{"Total", strconv.Itoa(n), strconv.Itoa(c), strconv.Itoa(n / c)})
 	table.Render()
 }
