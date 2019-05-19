@@ -10,7 +10,7 @@ Collect and print statistics about a specific Golang source directory.
 
 * Nodes (syntax tree): Measures the number of nodes created in the abstract syntax tree of a source code.
 
-* Node Complexity Rate: Measures the number of nodes per complexity.
+* Node Complexity Rate: Measures the number of nodes per complexity, which indicates good balance between control structure and simple statements.
 
 ##### Table of Contents
 

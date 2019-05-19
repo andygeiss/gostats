@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 )
 
-// FromPath ...
+// FromPath collects a slice of file names by a given path.
 func FromPath(path string) (slice []string, err error) {
 	if err := filepath.Walk(path, func(path string, info os.FileInfo, err error) error {
 		if info.IsDir() {

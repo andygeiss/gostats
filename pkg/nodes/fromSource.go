@@ -6,7 +6,7 @@ import (
 	"go/token"
 )
 
-// FromSource ...
+// FromSource parses all files and calculates the number of nodes by a given path.
 func FromSource(path string) (int, error) {
 
 	fset := token.NewFileSet()
@@ -30,6 +30,7 @@ type nodesVisitor struct {
 	Nodes int
 }
 
+// Visit counts the number of each node visited.
 func (c *nodesVisitor) Visit(node ast.Node) ast.Visitor {
 	c.Nodes++
 	return c
