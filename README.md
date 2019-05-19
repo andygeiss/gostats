@@ -12,6 +12,11 @@ Collect and print statistics like code complexity about a specific Golang source
 
 * Node Complexity Rate: Measures the number of nodes per complexity, which indicates good balance between control structure and simple statements.
 
+**Important**
+
+* Files in subdirectory "testdata" will be ignored.
+* Files with suffix "_test.go" will be ignored.
+
 ##### Table of Contents
 
 - [Installation](README.md#installation)
@@ -50,4 +55,37 @@ Flags:
 
 Use "gostats [command] --help" for more information about a command.
 
+```
+
+## Example
+
+Use the following command to create statistics about by itself:
+
+    gostats table .
+
+The table prints the statistics per file and in total.    
+```
++-----------------------------------+-------+------------+-----+
+|               IDENT               | NODES | COMPLEXITY | NCR |
++-----------------------------------+-------+------------+-----+
+| cmd/complexity.go                 |  84   |     3      | 28  |
+| cmd/ncr.go                        |  104  |     3      | 34  |
+| cmd/nodes.go                      |  84   |     3      | 28  |
+| cmd/root.go                       |  56   |     2      | 28  |
+| cmd/table.go                      |  324  |     4      | 81  |
+| cmd/utils.go                      |  134  |     3      | 44  |
+| cmd/version.go                    |  22   |     1      | 22  |
+| configs/appInfo.go                |   0   |     1      |  0  |
+| internal/stats/service.default.go |  302  |     7      | 43  |
+| internal/stats/service.go         |   0   |     1      |  0  |
+| main.go                           |  20   |     1      | 20  |
+| pkg/complexity/fromSource.go      |  324  |     11     | 29  |
+| pkg/files/excludeByPrefix.go      |  78   |     3      | 26  |
+| pkg/files/excludeBySuffix.go      |  78   |     3      | 26  |
+| pkg/files/filterByExtension.go    |  76   |     3      | 25  |
+| pkg/files/fromPath.go             |  132  |     3      | 44  |
+| pkg/nodes/fromSource.go           |  200  |     6      | 33  |
++-----------------------------------+-------+------------+-----+
+|               TOTAL               | 2018  |     58     | 34  |
++-----------------------------------+-------+------------+-----+
 ```
