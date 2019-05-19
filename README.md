@@ -2,7 +2,7 @@
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/andygeiss/gostats)](https://goreportcard.com/report/github.com/andygeiss/gostats)
 
-Collect and print statistics about a specific Golang source directory.
+Collect and print statistics like code complexity about a specific Golang source directory.
 
 **Features**
 
