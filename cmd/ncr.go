@@ -16,7 +16,7 @@ var ncrCmd = &cobra.Command{
 	Long:  "Measures the number of nodes per complexity",
 	Run: func(cmd *cobra.Command, args []string) {
 		printHelpIfEmptyArgs(args)
-		printComplexityByResult(getResultByArg0Path(args))
+		printNodeComplexityRateByResult(getResultByArg0Path(args))
 	},
 }
 
