@@ -8,13 +8,11 @@ import (
 
 // FromSource parses all files and calculates the number of nodes by a given path.
 func FromSource(path string) (int, error) {
-
-	fset := token.NewFileSet()
-	f, err := parser.ParseFile(fset, path, nil, 0)
+	fs := token.NewFileSet()
+	f, err := parser.ParseFile(fs, path, nil, 0)
 	if err != nil {
 		return 0, err
 	}
-
 	var state nodesVisitor
 	for _, decl := range f.Decls {
 		switch fn := decl.(type) {
@@ -22,7 +20,6 @@ func FromSource(path string) (int, error) {
 			ast.Walk(&state, fn)
 		}
 	}
-
 	return state.Nodes, nil
 }
 
