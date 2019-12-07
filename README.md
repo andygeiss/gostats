@@ -1,6 +1,7 @@
 # gostats
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/andygeiss/gostats)](https://goreportcard.com/report/github.com/andygeiss/gostats)
+[![BCH compliance](https://bettercodehub.com/edge/badge/andygeiss/gostats?branch=master)](https://bettercodehub.com/)
 
 Collect and print statistics like code complexity about a specific Golang source directory.
 
